@@ -14,16 +14,16 @@ Incluye una página de inicio, un formulario de registro y una encuesta de satis
 `assets/` → Contiene una imagen.
 `documentación/` → Contiene este archivo README.  
 
-## 🚀 Cómo Ver el Proyecto  
+##  Cómo Ver el Proyecto  
 1. Clonar el repositorio:  
    ```bash
    git clone https://github.com/Coquito-Amarillo-S-A-S/coquito-amarillo-web
    ```
 2. Abrir `index.html` en un navegador web.  
 
-## 📄 Autor  
-📌 **Nombre:** [Mariana Romero, Dahiana Benitez y Juan Esteban Cañas]  
-📌 **Institución:** [Servicio Nacional de Aprendizaje (SENA)]  
-📌 **Fecha:** [Marzo 2025]  
+##  Autor  
+ **Nombre:** [Mariana Romero, Dahiana Benitez y Juan Esteban Cañas]  
+ **Institución:** [Servicio Nacional de Aprendizaje (SENA)]  
+ **Fecha:** [Marzo 2025]  
 
 ---
