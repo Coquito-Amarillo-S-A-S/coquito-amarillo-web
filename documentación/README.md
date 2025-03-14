@@ -1,18 +1,18 @@
-# 🌟 Coquito Amarillo Web
+# Coquito Amarillo Web
 
-## 📌 Descripción  
+## Descripción  
 Este es un proyecto web desarrollado para **Coquito Amarillo S.A.S**, una empresa especializada en empaques industriales.  
 Incluye una página de inicio, un formulario de registro y una encuesta de satisfacción.  
 
-## 🛠️ Tecnologías Utilizadas  
+## Tecnologías Utilizadas  
 - **HTML5** para la estructura de la página.  
 - **CSS3** para los estilos y diseño.  
 - **Git & GitHub** para el control de versiones.  
 
-## 📂 Estructura del Proyecto  
-📂 `src/` → Contiene el código fuente del sitio web (`index.html`, `styles.css`, etc.).  
-📂 `assets/` → Contiene imágenes y otros recursos de diseño.  
-📂 `documentación/` → Contiene este archivo README.  
+##  Estructura del Proyecto  
+`src/` → Contiene el código fuente del sitio web (`index.html`, `styles.css`, etc.).  
+`assets/` → Contiene una imagen.
+`documentación/` → Contiene este archivo README.  
 
 ## 🚀 Cómo Ver el Proyecto  
 1. Clonar el repositorio:  
