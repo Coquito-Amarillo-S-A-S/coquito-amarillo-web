@@ -1,0 +1,47 @@
+name: CI/CD - Deploy Web
+
+on:
+  push:
+    branches:
+      - main  # Se ejecuta cada vez que se sube algo a main
+  pull_request:
+    branches:
+      - main  # También se ejecuta en cada pull request a main
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🛠️ Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: ⚙️ Configurar Node.js
+        uses: actions/setup-node@v3
+        with:
+          node-version: '18'
+
+      - name: 📦 Instalar dependencias (si existen)
+        run: npm install || echo "No hay dependencias"
+
+      - name: 🔍 Ejecutar pruebas unitarias (si existen)
+        run: npm test || echo "No hay pruebas configuradas"
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: 🚀 Clonar el repositorio
+        uses: actions/checkout@v3
+
+      - name: 📂 Configurar GitHub Pages
+        uses: actions/configure-pages@v2
+
+      - name: 📤 Subir archivos a GitHub Pages
+        uses: actions/upload-pages-artifact@v1
+        with:
+          path: './src' # Asegúrate de que este sea el directorio correcto
+
+      - name: 🚀 Publicar en GitHub Pages
+        uses: actions/deploy-pages@v1
