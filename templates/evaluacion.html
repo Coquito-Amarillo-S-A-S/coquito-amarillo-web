@@ -26,7 +26,10 @@
 
     <!-- Sección de Evaluación -->
     <main>
-        <form>
+        <form action="/guardar" method="POST">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
             <label for="comunicacion">Comunicación:</label>
             <input type="range" id="comunicacion" name="comunicacion" min="1" max="10">
 
@@ -39,7 +42,9 @@
             <button type="submit">Enviar</button>
         </form>
     </main>
-<br><br><br>
+
+    <br><br><br>
+    
     <!-- Pie de Página -->
     <footer>
         <p>&copy; 2025 Coquito Amarillo - Todos los derechos reservados.</p>
