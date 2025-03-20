@@ -7,15 +7,43 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+
+    <!-- Barra de Navegación -->
+    <nav>
+        <ul>
+            <li><a href="../templates/index.html">Inicio</a></li>
+            <li><a href="../templates/nosotros.html">Nosotros</a></li>
+            <li><a href="../templates/contacto.html">Contacto</a></li>
+            <li><a href="../templates/evaluacion.html">Evaluación</a></li>
+        </ul>
+    </nav>
+
+    <!-- Encabezado -->
     <header>
         <h1>Evaluación de RRHH</h1>
+        <p>Evalúa diferentes aspectos de tu rendimiento y habilidades en el trabajo.</p>
+    </header>
+
+    <!-- Sección de Evaluación -->
+    <main>
         <form>
-            <label>Comunicación: <input type="range" min="1" max="10"></label><br>
-            <label>Trabajo en equipo: <input type="range" min="1" max="10"></label><br>
-            <label>Productividad: <input type="range" min="1" max="10"></label><br>
+            <label for="comunicacion">Comunicación:</label>
+            <input type="range" id="comunicacion" name="comunicacion" min="1" max="10">
+
+            <label for="equipo">Trabajo en equipo:</label>
+            <input type="range" id="equipo" name="equipo" min="1" max="10">
+
+            <label for="productividad">Productividad:</label>
+            <input type="range" id="productividad" name="productividad" min="1" max="10">
+
             <button type="submit">Enviar</button>
         </form>
-    </header>
+    </main>
+<br><br><br>
+    <!-- Pie de Página -->
+    <footer>
+        <p>&copy; 2025 Coquito Amarillo - Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
-

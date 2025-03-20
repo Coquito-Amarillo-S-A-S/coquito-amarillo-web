@@ -7,14 +7,43 @@
     <link rel="stylesheet" href="../css/styles.css">
 </head>
 <body>
+
+    <!-- Barra de Navegación -->
+    <nav>
+        <ul>
+            <li><a href="../templates/index.html">Inicio</a></li>
+            <li><a href="../templates/nosotros.html">Nosotros</a></li>
+            <li><a href="../templates/contacto.html">Contacto</a></li>
+            <li><a href="../templates/evaluacion.html">Evaluación</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección de Contacto -->
     <header>
         <h1>Contacto</h1>
+        <p>¿Tienes alguna pregunta? Envíanos un mensaje y te responderemos lo antes posible.</p>
+    </header>
+
+    <main>
         <form>
-            <label>Nombre: <input type="text" name="nombre"></label><br>
-            <label>Correo: <input type="email" name="correo"></label><br>
-            <label>Mensaje: <textarea name="mensaje"></textarea></label><br>
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required>
+
+            <label for="correo">Correo Electrónico:</label>
+            <input type="email" id="correo" name="correo" required>
+
+            <label for="mensaje">Mensaje:</label>
+            <textarea id="mensaje" name="mensaje" rows="4" required></textarea>
+
             <button type="submit">Enviar</button>
         </form>
-    </header>
+    </main>
+    <br><br><br>
+
+    <!-- Pie de Página -->
+    <footer>
+        <p>&copy; 2025 Coquito Amarillo - Todos los derechos reservados.</p>
+    </footer>
+
 </body>
 </html>
