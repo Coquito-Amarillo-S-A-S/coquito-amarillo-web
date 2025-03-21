@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Evaluación de RRHH</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
 </head>
 <body>
 
     <!-- Barra de Navegación -->
     <nav>
         <ul>
-            <li><a href="../templates/index.html">Inicio</a></li>
-            <li><a href="../templates/nosotros.html">Nosotros</a></li>
-            <li><a href="../templates/contacto.html">Contacto</a></li>
-            <li><a href="../templates/evaluacion.html">Evaluación</a></li>
+            <li><a href="{{ url_for('index') }}">Inicio</a></li>
+            <li><a href="{{ url_for('nosotros') }}">Nosotros</a></li>
+            <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+            <li><a href="{{ url_for('mostrar_formulario') }}">Evaluación</a></li>
         </ul>
     </nav>
 
@@ -24,24 +24,45 @@
         <p>Evalúa diferentes aspectos de tu rendimiento y habilidades en el trabajo.</p>
     </header>
 
-    <!-- Sección de Evaluación -->
-    <main>
-        <form action="/guardar" method="POST">
-            <label for="nombre">Nombre:</label>
-            <input type="text" id="nombre" name="nombre" required>
-
-            <label for="comunicacion">Comunicación:</label>
-            <input type="range" id="comunicacion" name="comunicacion" min="1" max="10">
-
-            <label for="equipo">Trabajo en equipo:</label>
-            <input type="range" id="equipo" name="equipo" min="1" max="10">
-
-            <label for="productividad">Productividad:</label>
-            <input type="range" id="productividad" name="productividad" min="1" max="10">
-
+    <!-- Formulario de Evaluación -->
+    <section>
+        <h2>Formulario de Evaluación</h2>
+        <form id="formEvaluacion">
+            <label>Nombre: <input type="text" name="nombre" required></label><br>
+            <label>Edad: <input type="number" name="edad" required></label><br>
+            <label>Categoría: <input type="text" name="categoria" required></label><br>
+            <label>Puntuación: <input type="number" name="puntuacion" required></label><br>
             <button type="submit">Enviar</button>
         </form>
-    </main>
+    </section>
+
+    <script>
+        document.getElementById('formEvaluacion').addEventListener('submit', function(event) {
+            event.preventDefault(); // Evita el envío tradicional
+
+            let formData = {
+                nombre: document.querySelector('input[name="nombre"]').value,
+                edad: document.querySelector('input[name="edad"]').value,
+                categoria: document.querySelector('input[name="categoria"]').value,
+                puntuacion: document.querySelector('input[name="puntuacion"]').value
+            };
+
+            fetch('/guardar', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json'
+                },
+                body: JSON.stringify(formData)
+            })
+            .then(response => response.json())
+            .then(data => {
+                alert(data.mensaje);
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+        });
+    </script>
 
     <br><br><br>
     
