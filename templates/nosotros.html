@@ -4,19 +4,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Nosotros - Coquito Amarillo</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="../static/css/style.css">  
 </head>
 <body>
     
-        <nav>
-            <ul>
-                <li><a href="../templates/index.html">Inicio</a></li>
-                <li><a href="../templates/nosotros.html">Nosotros</a></li>
-                <li><a href="../templates/contacto.html">Contacto</a></li>
-                <li><a href="../templates/evaluacion.html">Evaluación</a></li>
-            </ul>
-        </nav>
-   
+    <nav>
+        <ul>
+            <li><a href="{{ url_for('home') }}">Inicio</a></li>
+            <li><a href="{{ url_for('nosotros') }}">Nosotros</a></li>
+            <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+           <li><a href="{{ url_for('mostrar_formulario') }}">Evaluacion</a></li> 
+        </ul>
+    </nav>
     
     <main>
         <section class="nosotros">

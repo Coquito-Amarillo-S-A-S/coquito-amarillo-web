@@ -1,8 +1,57 @@
-[{
-    "nombre": "Juan Pérez",
-    "vida": 8,
-    "trabajo": 7,
-    "familia": 9
-  }
-  ] 
-{"nombre": "Carlos", "vida": 7, "trabajo": 8, "familia": 6}
+[
+    {
+        "salud": 1,
+        "dinero": 1,
+        "amor": 1,
+        "trabajo": 1,
+        "familia": 1,
+        "ocio": 1,
+        "crecimiento": 1,
+        "espiritualidad": 1,
+        "fecha": "2025-03-21"
+    },
+    {
+        "salud": 3,
+        "dinero": "-3",
+        "amor": 10,
+        "trabajo": 5,
+        "familia": 5,
+        "ocio": 6,
+        "crecimiento": 10,
+        "espiritualidad": 10,
+        "fecha": "2025-03-21"
+    },
+    {
+        "salud": 3,
+        "dinero": 4,
+        "amor": 3,
+        "trabajo": 2,
+        "familia": 2,
+        "ocio": 2,
+        "crecimiento": 2,
+        "espiritualidad": 2,
+        "fecha": "2025-03-13"
+    },
+    {
+        "salud": 3,
+        "dinero": 4,
+        "amor": 5,
+        "trabajo": 6,
+        "familia": 4,
+        "ocio": 3,
+        "crecimiento": 2,
+        "espiritualidad": 2,
+        "fecha": "2025-03-18"
+    },
+    {
+        "salud": 3,
+        "dinero": 4,
+        "amor": 6,
+        "trabajo": 7,
+        "familia": 8,
+        "ocio": 5,
+        "crecimiento": 5,
+        "espiritualidad": 5,
+        "fecha": "2025-03-26"
+    }
+]

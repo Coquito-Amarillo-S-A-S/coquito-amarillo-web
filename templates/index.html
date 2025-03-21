@@ -4,17 +4,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Coquito Amarillo - Bienvenida</title>
-    <link rel="stylesheet" href="../css/styles.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}?v=1.0">
 </head>
 <body>
 
     <!-- Menú de navegación -->
     <nav>
         <ul>
-            <li><a href="../templates/index.html">Inicio</a></li>
-            <li><a href="../templates/nosotros.html">Nosotros</a></li>
-            <li><a href="../templates/contacto.html">Contacto</a></li>
-            <li><a href="../templates/evaluacion.html">Evaluación</a></li>
+            <li><a href="{{ url_for('home') }}">Inicio</a></li>
+            <li><a href="{{ url_for('nosotros') }}">Nosotros</a></li>
+            <li><a href="{{ url_for('contacto') }}">Contacto</a></li>
+           <li><a href="{{ url_for('mostrar_formulario') }}">Evaluacion</a></li> 
         </ul>
     </nav>
 
