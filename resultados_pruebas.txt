@@ -1,0 +1,123 @@
+=================================================================================================== test session starts ====================================================================================================
+platform win32 -- Python 3.13.2, pytest-8.3.5, pluggy-1.5.0 -- c:\Users\Admin\AppData\Local\Programs\Python\Python313\python.exe
+cachedir: .pytest_cache
+rootdir: C:\Users\Admin\Desktop\rueda de vida
+collecting ... collected 2 items
+
+test_rueda_vida.py::test_validacion_entrada FAILED                                                                                                                                                                    [ 50%]
+test_rueda_vida.py::test_guardado_archivo FAILED                                                                                                                                                                      [100%]
+
+========================================================================================================= FAILURES =========================================================================================================
+_________________________________________________________________________________________________ test_validacion_entrada __________________________________________________________________________________________________
+
+monkeypatch = <_pytest.monkeypatch.MonkeyPatch object at 0x000001DD10BD83E0>
+
+    def test_validacion_entrada(monkeypatch):
+        inputs = iter(["", "0", "11", "5"])  # Simula entradas inválidas y válidas
+        monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+    
+>       nombre, edad, ocupacion, categorias, valores = obtener_datos()
+
+test_rueda_vida.py:10: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+rueda_de_la_vida.py:16: in obtener_datos
+    valor = input(f"Puntúa {categoria} (1-10): ")
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+_ = 'Puntúa Dinero (1-10): '
+
+>   monkeypatch.setattr('builtins.input', lambda _: next(inputs))
+E   StopIteration
+
+test_rueda_vida.py:8: StopIteration
+
+The above exception was the direct cause of the following exception:
+
+cls = <class '_pytest.runner.CallInfo'>, func = <function call_and_report.<locals>.<lambda> at 0x000001DD10C5BA60>, when = 'call', reraise = (<class '_pytest.outcomes.Exit'>, <class 'KeyboardInterrupt'>)
+
+    @classmethod
+    def from_call(
+        cls,
+        func: Callable[[], TResult],
+        when: Literal["collect", "setup", "call", "teardown"],
+        reraise: type[BaseException] | tuple[type[BaseException], ...] | None = None,
+    ) -> CallInfo[TResult]:
+        """Call func, wrapping the result in a CallInfo.
+    
+        :param func:
+            The function to call. Called without arguments.
+        :type func: Callable[[], _pytest.runner.TResult]
+        :param when:
+            The phase in which the function is called.
+        :param reraise:
+            Exception or exceptions that shall propagate if raised by the
+            function, instead of being wrapped in the CallInfo.
+        """
+        excinfo = None
+        start = timing.time()
+        precise_start = timing.perf_counter()
+        try:
+>           result: TResult | None = func()
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\runner.py:341: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\runner.py:242: in <lambda>
+    lambda: runtest_hook(item=item, **kwds), when=when, reraise=reraise
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\pluggy\_hooks.py:513: in __call__
+    return self._hookexec(self.name, self._hookimpls.copy(), kwargs, firstresult)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\pluggy\_manager.py:120: in _hookexec
+    return self._inner_hookexec(hook_name, methods, kwargs, firstresult)
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:92: in pytest_runtest_call
+    yield from thread_exception_runtest_hook()
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\threadexception.py:68: in thread_exception_runtest_hook
+    yield
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\unraisableexception.py:95: in pytest_runtest_call
+    yield from unraisable_exception_runtest_hook()
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\unraisableexception.py:70: in unraisable_exception_runtest_hook
+    yield
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\logging.py:846: in pytest_runtest_call
+    yield from self._runtest_for(item, "call")
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\logging.py:829: in _runtest_for
+    yield
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <CaptureManager _method='fd' _global_capturing=<MultiCapture out=<FDCapture 1 oldfd=6 _state='suspended' tmpfile=<Enco..._io.TextIOWrapper name='nul' mode='r' encoding='utf-8'>> _state='suspended' _in_suspended=False> _capture_fixture=None>
+item = <Function test_validacion_entrada>
+
+    @hookimpl(wrapper=True)
+    def pytest_runtest_call(self, item: Item) -> Generator[None]:
+        with self.item_capture("call", item):
+>           return (yield)
+E           RuntimeError: generator raised StopIteration
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\site-packages\_pytest\capture.py:898: RuntimeError
+--------------------------------------------------------------------------------------------------- Captured stdout call ---------------------------------------------------------------------------------------------------
+Responde en una escala del 1 al 10
+__________________________________________________________________________________________________ test_guardado_archivo ___________________________________________________________________________________________________
+
+    def test_guardado_archivo():
+        nombre, edad, ocupacion = "Juan", "25", "Estudiante"
+        categorias = ["Salud"]
+        valores = [8]
+    
+        guardar_datos(nombre, edad, ocupacion, categorias, valores)
+    
+        with open("rueda_vida.txt", "r", encoding="utf-8") as file:
+>           contenido = file.read()
+
+test_rueda_vida.py:22: 
+_ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ _ 
+
+self = <encodings.utf_8.IncrementalDecoder object at 0x000001DD10BAE090>, input = b'Nombre: Juan\r\nEdad: 25\r\nOcupaci\xf3n: Estudiante\r\n\r\nRespuestas:\r\nSalud: 8\r\n', final = True
+
+    def decode(self, input, final=False):
+        # decode input (taking the buffer into account)
+        data = self.buffer + input
+>       (result, consumed) = self._buffer_decode(data, self.errors, final)
+E       UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf3 in position 31: invalid continuation byte
+
+..\..\AppData\Local\Programs\Python\Python313\Lib\codecs.py:325: UnicodeDecodeError
+================================================================================================= short test summary info ==================================================================================================
+FAILED test_rueda_vida.py::test_validacion_entrada - RuntimeError: generator raised StopIteration
+FAILED test_rueda_vida.py::test_guardado_archivo - UnicodeDecodeError: 'utf-8' codec can't decode byte 0xf3 in position 31: invalid continuation byte
+==================================================================================================== 2 failed in 0.16s =====================================================================================================

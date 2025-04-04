@@ -1,0 +1,13 @@
+Nombre: Juan
+Edad: 21
+Ocupación: programador
+
+Respuestas:
+Salud: 2
+Dinero: 4
+Amor: 6
+Familia: 8
+Trabajo: 4
+Diversión: 10
+Desarrollo Personal: 7
+Espiritualidad: 1
